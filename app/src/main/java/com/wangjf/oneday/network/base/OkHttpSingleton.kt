@@ -2,9 +2,9 @@ package com.wangjf.kotlinframwork.network.base
 
 import com.facebook.stetho.Stetho
 import com.facebook.stetho.okhttp3.StethoInterceptor
-import com.wangjf.kotlinframwork.BuildConfig
 import com.wangjf.kotlinframwork.network.Constraint
-import com.wangjf.kotlinframwork.ui.base.FramworkApplication
+import com.wangjf.oneday.BuildConfig
+import com.wangjf.oneday.ui.base.BaseApplication
 import okhttp3.*
 import java.util.concurrent.TimeUnit
 
@@ -27,7 +27,7 @@ class OkHttpSingleton {
         var httpClientBuilder = httpClient?.newBuilder()
 
         if (BuildConfig.DEBUG) {
-            Stetho.initializeWithDefaults(FramworkApplication.mainContext)
+            Stetho.initializeWithDefaults(BaseApplication.mainContext)
             httpClientBuilder?.addNetworkInterceptor(StethoInterceptor())
         }
 

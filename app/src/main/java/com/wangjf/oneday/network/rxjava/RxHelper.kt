@@ -31,11 +31,10 @@ object RxHelper {
 
     }
 
-    fun <T> createData(data : T): Observable<T>{
-        return Observable.create{
-                t ->
-                t.onNext(data)
-                t.onComplete()
-            }
+    fun <T> createData(data: T): Observable<T> {
+        return Observable.create { t ->
+            t.onNext(data)
+            t.onComplete()
+        }
     }
 }

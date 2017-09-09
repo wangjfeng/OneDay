@@ -43,7 +43,7 @@ abstract class RxSubscribe<T>(private val mContext: Context) : DisposableObserve
             _onError("网络不可用")
             return
         }
-        when(e){
+        when (e) {
             is SocketTimeoutException -> _onError("请求超时,请稍后再试...")
             is ConnectException -> _onError("请求超时,请稍后再试...")
             is HttpException -> _onError("服务器异常，请稍后再试...")
