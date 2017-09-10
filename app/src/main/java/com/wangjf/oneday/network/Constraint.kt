@@ -8,5 +8,5 @@ object Constraint {
     var DEFAULT_READ_TIMEOUT_MILLIS: Long = 20
     var DEFAULT_WRITE_TIMEOUT_MILLIS: Long = 20
 
-    val BASE_URL = ""
+    val BASE_URL = "https://interface.meiriyiwen.com/article/"
 }
