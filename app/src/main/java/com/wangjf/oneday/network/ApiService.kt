@@ -17,11 +17,11 @@ interface ApiService {
     fun getLogin(req : BaseReq) : Observable<BaseResult<String>>
 
     @GET("day")
-    fun getDayArticle(dev:Int = 1, date:String) :  Observable<ObjectResult<ArticleResult>>
+    fun getDayArticle(dev:Int = 1, date:String) :  Observable<BaseResult<ArticleResult>>
 
     @GET("today")
-    fun getTodayArticle(dev:Int = 1) :  Observable<ObjectResult<ArticleResult>>
+    fun getTodayArticle(dev:Int = 1) :  Observable<BaseResult<ArticleResult>>
 
     @GET("random")
-    fun getRandomArticle(dev:Int = 1) :  Observable<ObjectResult<ArticleResult>>
+    fun getRandomArticle(dev:Int = 1) :  Observable<BaseResult<ArticleResult>>
 }

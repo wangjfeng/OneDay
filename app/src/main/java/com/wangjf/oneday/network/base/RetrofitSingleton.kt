@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
  * Created by Administrator on 2017/7/17.
  */
 class RetrofitSingleton private constructor() {
-    private var apiService: ApiService? = null
+    var apiService: ApiService? = null
         get() = instance.apiService
 
     private var retrofit: Retrofit ? = null

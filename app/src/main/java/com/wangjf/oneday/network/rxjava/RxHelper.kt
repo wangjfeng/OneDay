@@ -18,7 +18,7 @@ object RxHelper {
     fun <T> handleResult(): ObservableTransformer<BaseResult<T>, T> {
         return ObservableTransformer { tObservable ->
             tObservable.flatMap { result ->
-                if (result.status == 0) {
+                if (result.data == null) {
                     createData(result.data)
                 } else {
                     Observable.error<T>(Exception(result.msg))
@@ -31,7 +31,7 @@ object RxHelper {
 
     }
 
-    fun <T> createData(data: T): Observable<T> {
+    private fun <T> createData(data: T): Observable<T> {
         return Observable.create { t ->
             t.onNext(data)
             t.onComplete()
